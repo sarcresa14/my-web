@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DYECHELJOC Structure</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #f0f4c3, #aed581);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #388e3c;
+            margin-bottom: 20px;
+        }
+
+        .section {
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 1.2rem;
+            color: #2e7d32;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 10px;
+            background: #e8f5e9;
+            border: 1px solid #81c784;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .section-title:hover {
+            background-color: #c8e6c9;
+        }
+
+        .section-content {
+            display: none;
+            margin-top: 10px;
+            margin-left: 20px;
+            padding-left: 10px;
+            border-left: 2px solid #81c784;
+        }
+
+        .section-content div {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>DYECHELJOC</h1>
+
+        <!-- Homepage Section -->
+        <div class="section">
+            <div class="section-title" onclick="toggleSection(this)">
+                Homepage <span>+</span>
+            </div>
+            <div class="section-content">
+                <div>Product</div>
+                <div>Service
+                    <div>
+                        <strong>Subsections:</strong>
+                        <div>On Deliver</div>
+                        <div>Gcash</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile Section -->
+        <div class="section">
+            <div class="section-title" onclick="toggleSection(this)">
+                Profile <span>+</span>
+            </div>
+            <div class="section-content">
+                <div>FB Name</div>
+                <div>CP Number</div>
+                <div>Email Account</div>
+            </div>
+        </div>
+
+        <!-- Admin Section -->
+        <div class="section">
+            <div class="section-title" onclick="toggleSection(this)">
+                Admin <span>+</span>
+            </div>
+            <div class="section-content">
+                <div>Facebook</div>
+                <div>Tiktok</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to toggle section visibility
+        function toggleSection(element) {
+            const content = element.nextElementSibling;
+            const isVisible = content.style.display === 'block';
+            content.style.display = isVisible ? 'none' : 'block';
+            element.querySelector('span').textContent = isVisible ? '+' : '-';
+        }
+    </script>
+</body>
+</html>
